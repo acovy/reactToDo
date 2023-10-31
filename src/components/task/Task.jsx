@@ -21,6 +21,13 @@ const Task = ({element, setTasks}) => {
     function chengeCheckbox() {
         setChecked(!checked);
     }
+
+    let message;
+    if(checked){
+        message = <span>Выполнено</span>;
+    }else{
+        message = <span>Не выполнено</span>;
+    }
     
         return (
             <div>
@@ -33,7 +40,7 @@ const Task = ({element, setTasks}) => {
                 <div>
                     <label className='add__checkrule'>
                     <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-                        <span>{checked ? 'Выполнено' : 'Не выполнено'}</span>
+                        <span>{message}</span>
                         <p>{element.name}</p>
                     </label>
                     <button onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
