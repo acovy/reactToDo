@@ -32,7 +32,8 @@ const Task = ({element, setTasks}) => {
                 ) : (
                 <div>
                     <label className='add__checkrule'>
-                    <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
+                    <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
+                        <span>{checked ? 'Выполнено' : 'Не выполнено'}</span>
                         <p>{element.name}</p>
                     </label>
                     <button onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
