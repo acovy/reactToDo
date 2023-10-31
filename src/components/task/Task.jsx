@@ -4,6 +4,8 @@ const Task = ({element, setTasks}) => {
 
     const [isEdit, setIsEdit] = useState(false);
     const [inputEdit, setInputEdit] = useState(element.name);
+    const [checked, setChecked] = useState(false);
+
     const handleClick = () => {
         setTasks((prevState) => 
             prevState.map((item) => {
@@ -16,7 +18,10 @@ const Task = ({element, setTasks}) => {
         setIsEdit(!isEdit)
         
     }
-
+    function chengeCheckbox() {
+        setChecked(!checked);
+    }
+    
         return (
             <div>
                 {isEdit ? (
@@ -27,7 +32,7 @@ const Task = ({element, setTasks}) => {
                 ) : (
                 <div>
                     <label className='add__checkrule'>
-                        <input type='checkbox' onChange={(event) => event.currentTarget.checked}/>
+                    <input type="checkbox" checked={checked} onChange={chengeCheckbox} />
                         <p>{element.name}</p>
                     </label>
                     <button onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>

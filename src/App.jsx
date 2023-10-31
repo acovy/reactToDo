@@ -5,6 +5,7 @@ import Task from './components/task/Task';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [value, setValue] = useState('');
+
   const handleOnSubmit = (event) => {
     event.preventDefault(); // для нажатия на кнопку add страница не обновлялась
     setTasks((prevState) => [
