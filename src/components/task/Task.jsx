@@ -30,20 +30,20 @@ const Task = ({element, setTasks}) => {
     }
     
         return (
-            <div>
+            <div className="body">
                 {isEdit ? (
-                <div>
+                <div className="div__true">
                     <input inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
                     <button onClick={handleClick}>Добавить</button>
                 </div>
                 ) : (
-                <div>
+                <div className="div__false">
                     <label className='add__checkrule'>
                     <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
                         <span>{message}</span>
                         <p>{element.name}</p>
                     </label>
-                    <button onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
+                    <button style={{ marginTop: "5px", marginBottom: "5px" }} onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
                     <button onClick={() => setIsEdit(!isEdit)}>edit</button>
                 </div>
                 )

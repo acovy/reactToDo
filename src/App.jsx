@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './App.css';
+import './App.scss';
 import Task from './components/task/Task';
 
 function App() {
@@ -21,11 +21,17 @@ function App() {
   <div>
     <div>
         <form onSubmit={handleOnSubmit}>
+          <h1>To-do List</h1>
           <input type="text" value={value} onChange={event => setValue(event.target.value)} /> 
           <button type="submit">add</button>
         </form>
         {tasks.map((element) => (
-          <Task setTasks={setTasks} element={element}/>
+          <Task 
+            setTasks={setTasks} 
+            element={element} 
+            style={{
+              display: "flex",
+          }}/>
         ))}
     </div>
   </div>
