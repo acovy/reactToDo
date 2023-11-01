@@ -1,40 +1,19 @@
-import {useState} from 'react';
-import './App.scss';
-import Task from './components/task/Task';
+import MainPage from "../src/components/main/Main";
+import { Link, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [value, setValue] = useState('');
-
-  const handleOnSubmit = (event) => {
-    event.preventDefault(); // для нажатия на кнопку add страница не обновлялась
-    setTasks((prevState) => [
-      ...prevState, 
-      {
-        name: value,
-        id: new Date().getTime(),
-      }
-    ])
-  }
 
   return (
-  <div>
-    <div>
-        <form onSubmit={handleOnSubmit}>
-          <h1>To-do List</h1>
-          <input type="text" value={value} onChange={event => setValue(event.target.value)} /> 
-          <button type="submit">add</button>
-        </form>
-        {tasks.map((element) => (
-          <Task 
-            setTasks={setTasks} 
-            element={element} 
-            style={{
-              display: "flex",
-          }}/>
-        ))}
-    </div>
-  </div>
+    <>
+      <header>
+      <Link to="/">Home</Link>
+        <br />
+      <Link to="/main">Todo</Link>
+      </header>
+      <Routes>
+        <Route path="/main" element={<MainPage/>}/>
+      </Routes>
+    </>
   )
 }
 
