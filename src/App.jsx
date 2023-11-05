@@ -1,24 +1,19 @@
-import MainPage from "../src/components/main/Main";
-import { Link, Routes, Route } from 'react-router-dom';
+import TasksPage from "./components/tasksPage/TasksPage";
+import Homepage from "./components/homePage/Homepage";
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
 
   return (
-    <>
-      <header>
-      <Link to="/">Home</Link>
-        <br />
-      <Link to="/main">Todo</Link>
-      </header>
+    <div className="App">
       <Routes>
-        <Route path="/main" element={<MainPage/>}/>
+        <Route path="/" element={<Homepage/>}/>
+        <Route path="/main" element={<TasksPage/>}/>
       </Routes>
-    </>
+    </div>
   )
 }
 
-// добавить пункт чекед на элемент в таск и стилизовать
-// добавить scss (saas)
-// стилизовать посмотрев варианты стилизации в интернетах 
+//  
 
 export default App;

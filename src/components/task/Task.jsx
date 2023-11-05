@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Task.scss";
 
 const Task = ({element, setTasks}) => {
 
@@ -18,41 +19,27 @@ const Task = ({element, setTasks}) => {
         setIsEdit(!isEdit)
         
     }
-    function chengeCheckbox() {
-        setChecked(!checked);
-    }
-
-    let message;
-    if(checked){
-        message = <span>Выполнено</span>;
-    }else{
-        message = <span>Не выполнено</span>;
-    }
     
         return (
-            <div className="body">
+            <div className="task">
                 {isEdit ? (
-                <div className="div__true">
-                    <input inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
-                    <button onClick={handleClick}>Добавить</button>
+                <div className="tasktrue">
+                    <input className="tasktrue__editing-task" inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
+                    <button className="tasktrue__btn-add" onClick={handleClick}>Добавить</button>
                 </div>
                 ) : (
-                <div className="div__false">
-                    <label className='add__checkrule'>
-                    <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-                        <span>{message}</span>
-                        <p>{element.name}</p>
+                <div className="taskfalse">
+                    <label className='taskfalse__radio'>
+                    <input className="taskfalse__checkbox" type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
+                        <p className={checked ? "taskfalse__checkbox_passive" : "taskfalse__checkbox_active"}>{element.name}</p>
                     </label>
-                    <button style={{ marginTop: "5px", marginBottom: "5px" }} onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
-                    <button onClick={() => setIsEdit(!isEdit)}>edit</button>
+                    <button className="taskfalse__btn-del" onClick={() => setTasks((prevState) => prevState.filter(delElem => delElem.id !== element.id))}>del</button>
+                    <button className="taskfalse__btn-edit" onClick={() => setIsEdit(!isEdit)}>edit</button>
                 </div>
                 )
                 }
             </div>
         )
-// - чтобы оаботал условный рендеринг
-// - вытащить значенте из инпута и поменять значение element 
-// смысл пэтпроекта самостоятельно искать решение . пэтпроект - максимальное приближение к комерческой разработке . 
 }
 
 export default Task;
