@@ -1,8 +1,88 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap');
+
+.tasks{
+  max-width: 800px;
+  padding: 32px 16px;
+  width: 100%;
+  margin: 0 auto;
+  header{
+    padding-left: 16px;
+    font-family: 'Roboto', sans-serif;
+    a {
+      color: #EC4899; 
+      text-decoration: none; 
+      &:hover{
+        color:#8B5CF6;
+      }
+    }
+  }
+  .tasks__form{
+    width: 800px;
+    height: 110px;
+    padding: 32px 16px;
+    margin: 0 auto;
+    margin-bottom: 3px;
+    
+    .tasks__title{
+      font-size: 40px;
+      width: 300px;
+      height: 30px;
+      color: #000e1a;
+      margin-bottom: 2px;
+      font-family: 'Roboto', sans-serif;
+    }
+    input,
+    button {
+      border: none;
+      outline: none;
+      background: none;
+    }
+    .tasks__enter-task{
+      flex: 1 1 0%;
+      width: 500px;
+      background-color: #eee;
+      padding: 16px;
+      border-radius: 16px;
+      margin-right: 16px;
+      color: #6B7280;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+        &placeholder{
+          color: #6B7280;
+        }
+    }
+    .tasks__btn-add{
+      color: #EC4899;
+      font-size: 20px;
+      font-weight: 700;
+      background-image: linear-gradient(to right, #EC4899, #8B5CF6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.2s;
+        &:hover {
+          opacity: 0.8;
+        }
+        &:active {
+          opacity: 0.6;
+        }
+    }
+  }
+  .tasks__subtitle{
+    font-size: 24px;
+    font-weight: 150;
+    color: #6B7280;
+    margin-bottom: 16px;
+    margin-left: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+  }
+  .tasks__list{
+    max-width: 800px;
+    padding: 32px 16px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
 }
