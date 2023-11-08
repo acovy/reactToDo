@@ -10,6 +10,7 @@ const TasksPage = () => {
 
     const handleOnSubmit = (event) => {
     event.preventDefault(); // для нажатия на кнопку add страница не обновлялась
+
     setTasks((prevState) => [
         ...prevState, 
         {
@@ -27,9 +28,9 @@ const TasksPage = () => {
         </header>
         <div className='tasks__form'>
         <form onSubmit={handleOnSubmit}>
-            <h1 className='tasks__title'>TuoDuoList ❯❯</h1>
+            <h1 className='tasks__title'>✘TuoDuoList ❯❯</h1>
             <h2 className='tasks__subtitle'>-this world is yours-</h2>
-            <input className='tasks__enter-task' placeholder="Enter your todo" type="text" value={value} onChange={event => setValue(event.target.value)} /> 
+            <input className='tasks__enter-task' required minlength="1" maxlength="300"placeholder="Enter your todo" type="text" value={value} onChange={event => setValue(event.target.value)} /> 
             <button className="tasks__btn-add" type="submit">ADD</button>
         </form>
         </div>
