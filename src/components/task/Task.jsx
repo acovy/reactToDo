@@ -23,20 +23,36 @@
         <div className="task">
         {isEdit ? (
             <div className="tasktrue">
-                <input placeholder="Write changed text" className="tasktrue__editing-task" inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
-                <button className="tasktrue__btn-add" onClick={handleClick}><AiOutlineLike/></button>
+                <input 
+                    placeholder="Write changed text" 
+                    className="tasktrue__editing-task" 
+                    inputEdit={inputEdit} 
+                    onChange={(event) => setInputEdit(event.target.value)}/>
+                <button className="tasktrue__btn-add" 
+                    onClick={handleClick}><AiOutlineLike/>
+                </button>
             </div>
         ) : (
             <div className="taskfalse">
             <label className="taskfalse__label">
-                <input className="taskfalse__checkbox" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                <input 
+                    className="taskfalse__checkbox" 
+                    type="checkbox" 
+                    checked={checked} 
+                    onChange={() => setChecked(!checked)}/>
                 <div className="custom-checkbox"></div>
                 {checked ? <AiOutlineCheck className="icon"/> : <AiOutlineLine className="icon"/>}
                 <p className={checked ? "active" : "passive"}>{element.name}</p>
             </label>
                 <div className="button-group"> 
-                    <button className="taskfalse__btn-edit"onClick={() => setIsEdit(!isEdit)}><AiOutlineEdit/></button>
-                    <button className="taskfalse__btn-del" onClick={() => setTasks((prevState) => prevState.filter((delElem) => delElem.id !== element.id))}><AiOutlineDelete/></button>
+                    <button 
+                        className="taskfalse__btn-edit"
+                        onClick={() => setIsEdit(!isEdit)}><AiOutlineEdit/>
+                    </button>
+                    <button 
+                        className="taskfalse__btn-del" 
+                        onClick={() => setTasks((prevState) => prevState.filter((delElem) => delElem.id !== element.id))}><AiOutlineDelete/>
+                    </button>
                 </div>
             </div>
         )}
