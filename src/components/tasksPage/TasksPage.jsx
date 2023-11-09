@@ -24,8 +24,15 @@ const TasksPage = () => {
         <header>
             <Link to="/">❮❮ Homepage</Link>
         </header>
-        <TasksForm handleSubmit={handleOnSubmit} value={value} setValue={setValue} />
-        <TasksList tasks={tasks} setTasks={setTasks} />
+        <TasksForm 
+            handleSubmit={handleOnSubmit} 
+            value={value} 
+            setValue={setValue} 
+        />
+        <TasksList 
+            tasks={tasks} 
+            setTasks={setTasks} 
+        />
     </div>
     )
 }
