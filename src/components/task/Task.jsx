@@ -1,5 +1,6 @@
     import { useState } from "react";
     import "./Task.scss";
+    import { AiOutlineDelete, AiOutlineEdit, AiOutlineLike } from "react-icons/ai";
 
     const Task = ({ element, setTasks }) => {
     const [isEdit, setIsEdit] = useState(false);
@@ -23,7 +24,7 @@
         {isEdit ? (
             <div className="tasktrue">
                 <input placeholder="Write changed text" className="tasktrue__editing-task" inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
-                <button className="tasktrue__btn-add" onClick={handleClick}>SAVE CHANGES</button>
+                <button className="tasktrue__btn-add" onClick={handleClick}><AiOutlineLike/></button>
             </div>
         ) : (
             <div className="taskfalse">
@@ -35,8 +36,8 @@
                 </p>
             </label>
                 <div className="button-group"> 
-                    <button className="taskfalse__btn-edit"onClick={() => setIsEdit(!isEdit)}>Edit</button>
-                    <button className="taskfalse__btn-del" onClick={() => setTasks((prevState) => prevState.filter((delElem) => delElem.id !== element.id))}>Del.</button>
+                    <button className="taskfalse__btn-edit"onClick={() => setIsEdit(!isEdit)}><AiOutlineEdit/></button>
+                    <button className="taskfalse__btn-del" onClick={() => setTasks((prevState) => prevState.filter((delElem) => delElem.id !== element.id))}><AiOutlineDelete/></button>
                 </div>
             </div>
         )}

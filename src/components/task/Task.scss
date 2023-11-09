@@ -33,11 +33,12 @@
             cursor: pointer;
             border-radius: 10px; // Для скругления углов
             }
-    
+        
             &:checked + .custom-checkbox {
             background-color: greenyellow;
             opacity: 0.8;
             }
+            
         }
     
         .passive {
@@ -87,13 +88,15 @@
         }
     
         .taskfalse__btn-del {
-        color: crimson;
+        padding-top: 5px;
+        color: #EC4899;
+        font-size: 25px;
         }
     
         .taskfalse__btn-edit {
-        background-image: linear-gradient(to right, #ec4899, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        padding-top: 5px;
+        color: #8B5CF6;
+        font-size: 26px;
         }
     
         .button-group {
@@ -128,11 +131,8 @@
         }
         .tasktrue__btn-add{
             color: #EC4899;
-            font-size: 20px;
-            font-weight: 700;
-            background-image: linear-gradient(to right, #EC4899, #8B5CF6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+            vertical-align: middle;
             cursor: pointer;
             transition: 0.2s;
                 &:hover {
