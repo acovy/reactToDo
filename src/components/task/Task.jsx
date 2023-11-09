@@ -1,6 +1,6 @@
     import { useState } from "react";
     import "./Task.scss";
-    import { AiOutlineDelete, AiOutlineEdit, AiOutlineLike } from "react-icons/ai";
+    import { AiOutlineDelete, AiOutlineEdit, AiOutlineLike, AiOutlineLine, AiOutlineCheck } from "react-icons/ai";
 
     const Task = ({ element, setTasks }) => {
     const [isEdit, setIsEdit] = useState(false);
@@ -31,9 +31,8 @@
             <label className="taskfalse__label">
                 <input className="taskfalse__checkbox" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className="custom-checkbox"></div>
-                <p type="text" className={checked ? "active" : "passive"}>
-                    {element.name}
-                </p>
+                {checked ? <AiOutlineCheck className="icon"/> : <AiOutlineLine className="icon"/>}
+                <p className={checked ? "active" : "passive"}>{element.name}</p>
             </label>
                 <div className="button-group"> 
                     <button className="taskfalse__btn-edit"onClick={() => setIsEdit(!isEdit)}><AiOutlineEdit/></button>
