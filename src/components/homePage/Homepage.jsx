@@ -1,5 +1,6 @@
 import { Link} from 'react-router-dom';
 import "./Homepage.scss";
+
 const Homepage = () => {
     return (
         <div className='body'>

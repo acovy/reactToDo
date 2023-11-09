@@ -48,9 +48,12 @@
       color: #6B7280;
       font-family: 'Roboto', sans-serif;
       font-size: 20px;
+        }
         &placeholder{
           color: #6B7280;
         }
+    .tasks__enter-task:invalid{
+      border: 1px dashed #8B5CF6;
     }
     .tasks__btn-add{
       color: #EC4899;

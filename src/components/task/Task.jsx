@@ -22,7 +22,7 @@
         <div className="task">
         {isEdit ? (
             <div className="tasktrue">
-                <input placeholder="Change your text" className="tasktrue__editing-task" inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
+                <input placeholder="Write changed text" className="tasktrue__editing-task" inputEdit={inputEdit} onChange={(event) => setInputEdit(event.target.value)}/>
                 <button className="tasktrue__btn-add" onClick={handleClick}>SAVE CHANGES</button>
             </div>
         ) : (
