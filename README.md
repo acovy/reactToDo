@@ -6,5 +6,5 @@
 </div>
 <h1>
   Hello everyone!
-  <img src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif" width="30px"/>
+  <img src="https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif" width="30px"/>
 </h1>
