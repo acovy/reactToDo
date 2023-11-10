@@ -8,12 +8,10 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<Homepage/>}/>
-        <Route path="/main" element={<TasksPage/>}/>
+        <Route path="/todo" element={<TasksPage/>}/>
       </Routes>
     </div>
   )
 }
-
-//  
 
 export default App;

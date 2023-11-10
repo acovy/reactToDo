@@ -1,8 +1,9 @@
     import { useState } from "react";
     import "./Task.scss";
+    import TasksForm from "../tasksForm/TasksForm";
     import { AiOutlineDelete, AiOutlineEdit, AiOutlineLike, AiOutlineLine, AiOutlineCheck } from "react-icons/ai";
 
-    const Task = ({ element, setTasks }) => {
+    const Task = ({ element, setTasks, handleOnSubmit }) => {
     const [isEdit, setIsEdit] = useState(false);
     const [inputEdit, setInputEdit] = useState(element.name);
     const [checked, setChecked] = useState(false);
@@ -23,14 +24,16 @@
         <div className="task">
         {isEdit ? (
             <div className="tasktrue">
-                <input 
-                    placeholder="Write changed text" 
-                    className="tasktrue__editing-task" 
-                    inputEdit={inputEdit} 
-                    onChange={(event) => setInputEdit(event.target.value)}/>
-                <button className="tasktrue__btn-add" 
-                    onClick={handleClick}><AiOutlineLike/>
-                </button>
+                <form onSubmit={handleOnSubmit}>
+                    <input
+                        placeholder="Write changed text" 
+                        className="tasktrue__editing-task" 
+                        value={inputEdit}
+                        onChange={(event) => setInputEdit(event.target.value)}/>
+                    <button className="tasktrue__btn-add" 
+                        onClick={handleClick}><AiOutlineLike/>
+                    </button>
+                </form>
             </div>
         ) : (
             <div className="taskfalse">

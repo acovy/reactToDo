@@ -26,10 +26,10 @@
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
       a {
-          color: #EC4899; 
+          color: red; 
           text-decoration: none; 
           &:hover{
-            color:#8B5CF6;
+            color: red;
           }
         }
     }
@@ -37,10 +37,10 @@
         font-size: larger;
         font-family: 'Roboto', sans-serif;
         a {
-          color: #EC4899; 
+          color: red; 
           text-decoration: none; 
           &:hover{
-            color:#8B5CF6;
+            color:red;
           }
         }
         h2{

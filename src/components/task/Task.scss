@@ -1,148 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap');
 
-.task {
-  width: 800px;
-  min-height: 10px;
-  color: red;
+.task{
+    width: 800px;
+    min-height: 10px;
+    color: red;
+    .taskfalse {
+        display: flex;
+        justify-content: space-between;
+        background-color: #eee;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        align-items: center;
+        height: 30px;
 
-  .taskfalse {
-    display: flex;
-    justify-content: space-between;
-    background-color: #eee;
-    padding: 16px;
-    border-radius: 16px;
-    margin-bottom: 16px;
-    align-items: center;
-    height: 30px;
-
-    .taskfalse .custom-checkbox {
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      cursor: pointer;
-      border-radius: 4px;
+        .taskfalse .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    
+        .taskfalse__label {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 10px;
+        width: 600px;
+    
+        .taskfalse__checkbox {
+            display: none;
+    
+            & + .custom-checkbox {
+            cursor: pointer;
+            }
+        
+            &:checked + .custom-checkbox {
+            }
+            
+        }
+    
+        .passive {
+            color: #6b7280;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            width: calc(100% - 40px);
+            display: block;
+            transition: 0.4s;
+            margin-left: 10px;
+        }
+    
+        .active {
+            text-decoration: line-through;
+            opacity: 0.2;
+        }
     }
-
-    .taskfalse__label {
-      display: flex;
-      align-items: center;
-      position: relative;
-      margin-right: 10px;
-      width: 600px;
-
-      .taskfalse__checkbox {
-        display: none;
-
-        & + .custom-checkbox {
-          cursor: pointer;
-        }
-
-        &:checked + .custom-checkbox {
-        }
-      }
-
-      .passive {
-        color: #6b7280;
+    
+        p {
+        color: #000e1a;
         font-size: 20px;
-        font-family: 'Roboto', sans-serif;
         width: calc(100% - 40px);
         display: block;
         transition: 0.4s;
+        font-family: 'Roboto', sans-serif;
         margin-left: 10px;
-      }
-
-      .active {
-        text-decoration: line-through;
-        opacity: 0.2;
-      }
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        }
+    
+        button {
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: 0.4s;
+        margin-right: 8px;
+    
+        &:hover {
+            opacity: 0.8;
+        }
+    
+        &:active {
+            opacity: 0.6;
+            }
+        }
+    
+        .taskfalse__btn-del {
+        padding-top: 5px;
+        color: red;
+        font-size: 25px;
+        }
+    
+        .taskfalse__btn-edit {
+        padding-top: 5px;
+        color: red;
+        font-size: 26px;
+        }
+    
+        .button-group {
+        display: flex;
+        align-items: center;
+        }
     }
-
-    p {
-      color: #000e1a;
-      font-size: 20px;
-      width: calc(100% - 40px);
-      display: block;
-      transition: 0.4s;
-      font-family: 'Roboto', sans-serif;
-      margin-left: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
+    
+    input,
     button {
-      cursor: pointer;
-      font-size: 22px;
-      font-weight: 700;
-      text-transform: uppercase;
-      transition: 0.4s;
-      margin-right: 8px;
-
-      &:hover {
-        opacity: 0.8;
-      }
-
-      &:active {
-        opacity: 0.6;
-      }
+        border: none;
+        outline: none;
+        background: none;
     }
 
-    .taskfalse__btn-del {
-      padding-top: 5px;
-      color: red;
-      font-size: 25px;
+    .tasktrue{
+        .tasktrue__editing-task{
+            flex: 1 1 0%;
+            width: 500px;
+            height: 30px;
+            background-color: #eee;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            padding: 16px;
+            border-radius: 16px;
+            margin-right: 16px;
+            margin-bottom: 16px;
+            color: #6B7280;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+                &placeholder{
+                    color: #6B7280;
+                }
+        }
+        .tasktrue__btn-add{
+            color: red;
+            opacity: 0.7;
+            font-size: 30px;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: 0.2s;
+                &:hover {
+                    opacity: 0.8;
+                }
+                &:active {
+                    opacity: 0.6;
+                }
+        }
     }
-
-    .taskfalse__btn-edit {
-      padding-top: 5px;
-      color: red;
-      font-size: 26px;
-    }
-
-    .button-group {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .tasktrue {
-    .tasktrue__editing-task {
-      flex: 1 1 0%;
-      width: 500px;
-      height: 30px;
-      background-color: #eee;
-      padding: 16px;
-      border-radius: 16px;
-      margin-right: 16px;
-      margin-bottom: 16px;
-      color: #6B7280;
-      font-family: 'Roboto', sans-serif;
-      font-size: 20px;
-
-      &placeholder {
-        color: #6B7280;
-      }
-    }
-
-    .tasktrue__btn-add {
-      color: red;
-      opacity: 0.7;
-      font-size: 30px;
-      vertical-align: middle;
-      cursor: pointer;
-      transition: 0.2s;
-
-      &:hover {
-        opacity: 0.8;
-      }
-
-      &:active {
-        opacity: 0.6;
-      }
-    }
-  }
+    
 }
